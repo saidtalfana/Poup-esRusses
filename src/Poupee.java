@@ -1,10 +1,13 @@
-abstract class Poupee {
+public  abstract class Poupee {
     private int taille;
-   private boolean ouverte;
+    boolean ouverte;
+   private Poupee dans, contient;
 
- public void Poupee(int taille,boolean ouverte){
+
+
+    public Poupee(int taille){
      this.taille=taille;
-     this.ouverte=ouverte;
+     this.ouverte=false;
  }
 
     public int getTaille() {
@@ -15,6 +18,22 @@ abstract class Poupee {
         this.taille = taille;
     }
 
+    public PoupéeRusse getDans() {
+        return (PoupéeRusse) dans;
+    }
+
+    public void setDans(PoupéeRusse dans) {
+        this.dans = dans;
+    }
+
+    public PoupéeRusse getContient() {
+        return (PoupéeRusse) contient;
+    }
+
+    public void setContient(PoupéeRusse contient) {
+        this.contient = contient;
+    }
+
     public boolean Ouverte() {
         return ouverte;
     }
@@ -22,6 +41,7 @@ abstract class Poupee {
     public void setOuverte(boolean ouverte) {
         this.ouverte = ouverte;
     }
+
     abstract void ouvrir();
     abstract void fermer();
     abstract void placerDans(Poupee p);
